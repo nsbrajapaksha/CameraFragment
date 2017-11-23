@@ -8,10 +8,10 @@
     tools:context="com.example.nsbr.camerafragment.MainActivity">
 
     <fragment
-        android:name="com.example.nsbr.camerafragment.CameraFragment"
         android:id="@+id/fragment_camera"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        tools:layout="@layout/fragment_camera" />
+        tools:layout="@layout/fragment_camera"
+        class="com.example.nsbr.camerafragment.CameraFragment"/>
 
 </RelativeLayout>

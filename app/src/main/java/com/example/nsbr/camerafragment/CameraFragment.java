@@ -64,8 +64,8 @@ public class CameraFragment extends Fragment {
         qOpened = (mCamera != null);
 
         if(qOpened){
-            mPreview = new CameraPreview(getActivity().getBaseContext(), mCamera,view);
-            FrameLayout preview = (FrameLayout) view.findViewById(R.id.camera_preview);
+            mPreview = new CameraPreview(getActivity().getBaseContext(), mCamera, mCameraView);
+            FrameLayout preview = (FrameLayout) mCameraView.findViewById(R.id.camera_preview);
             preview.addView(mPreview);
             mPreview.startCameraPreview();
         }
