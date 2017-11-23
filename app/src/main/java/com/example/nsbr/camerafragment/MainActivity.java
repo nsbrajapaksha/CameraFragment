@@ -4,6 +4,7 @@ import android.Manifest;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,18 +13,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        /*if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
-        {
-            ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE }, 0);
-        }*/
         super.onCreate(savedInstanceState);
         if (PermissionUtils.requestPermission(this, CAMERA_PERMISSIONS_REQUEST, Manifest.permission.CAMERA)) {
             setContentView(R.layout.activity_main);
+        } else {
+            Toast.makeText(this, "Need Camera permission!", Toast.LENGTH_SHORT).show();
         }
-
-
-
 
     }
 
@@ -39,7 +34,5 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-
-
 
 }
