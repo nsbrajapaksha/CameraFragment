@@ -258,7 +258,6 @@ public class CameraFragment extends Fragment {
         @Override
         protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
         {
-            // Source: http://stackoverflow.com/questions/7942378/android-camera-will-not-work-startpreview-fails
             final int width = resolveSize(getSuggestedMinimumWidth(), widthMeasureSpec);
             final int height = resolveSize(getSuggestedMinimumHeight(), heightMeasureSpec);
             setMeasuredDimension(width, height);
@@ -279,7 +278,6 @@ public class CameraFragment extends Fragment {
         @Override
         protected void onLayout(boolean changed, int left, int top, int right, int bottom)
         {
-            // Source: http://stackoverflow.com/questions/7942378/android-camera-will-not-work-startpreview-fails
             if (changed) {
                 final int width = right - left;
                 final int height = bottom - top;
@@ -327,7 +325,6 @@ public class CameraFragment extends Fragment {
          */
         private Camera.Size getOptimalPreviewSize(List<Camera.Size> sizes, int width, int height)
         {
-            // Source: http://stackoverflow.com/questions/7942378/android-camera-will-not-work-startpreview-fails
             Camera.Size optimalSize = null;
 
             final double ASPECT_TOLERANCE = 0.1;
